@@ -1,0 +1,10 @@
+D:\Учебное\RIS\Lab_3_server\Lab_3_server\Lab_3_server\bin\Debug\Lab_3_server.exe.config
+D:\Учебное\RIS\Lab_3_server\Lab_3_server\Lab_3_server\bin\Debug\Lab_3_server.exe
+D:\Учебное\RIS\Lab_3_server\Lab_3_server\Lab_3_server\bin\Debug\Lab_3_server.pdb
+D:\Учебное\RIS\Lab_3_server\Lab_3_server\Lab_3_server\obj\Debug\Lab_3_server.csprojAssemblyReference.cache
+D:\Учебное\RIS\Lab_3_server\Lab_3_server\Lab_3_server\obj\Debug\Lab_3_server.Server.resources
+D:\Учебное\RIS\Lab_3_server\Lab_3_server\Lab_3_server\obj\Debug\Lab_3_server.Properties.Resources.resources
+D:\Учебное\RIS\Lab_3_server\Lab_3_server\Lab_3_server\obj\Debug\Lab_3_server.csproj.GenerateResource.cache
+D:\Учебное\RIS\Lab_3_server\Lab_3_server\Lab_3_server\obj\Debug\Lab_3_server.csproj.CoreCompileInputs.cache
+D:\Учебное\RIS\Lab_3_server\Lab_3_server\Lab_3_server\obj\Debug\Lab_3_server.exe
+D:\Учебное\RIS\Lab_3_server\Lab_3_server\Lab_3_server\obj\Debug\Lab_3_server.pdb
