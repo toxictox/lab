@@ -16,6 +16,8 @@ namespace Lab_3_server
 {
     public partial class Server : Form
     {
+        TcpListener listener;
+
         public Server()
         {
             InitializeComponent();
@@ -24,28 +26,33 @@ namespace Lab_3_server
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            TcpListener listener = new TcpListener(IPAddress.Any, 5555);
+            startButton.Enabled = false;
+            listener = new TcpListener(IPAddress.Any, 5555);
             listener.Start();
-
-            while (true)
-            {
-                Socket socket = listener.AcceptSocket();
-
-                if (socket.Connected)
-                {
-                    richTextBox.AppendText("Client is connected...\n");
-                    NetworkStream networkStream = new NetworkStream(socket);
-                    ASCIIEncoding encoding = new ASCIIEncoding();
-
-                    ThreadClass threadClass = new ThreadClass();
-                    Thread thread = threadClass.Start(networkStream, this); break;
-                }
-            }
+            Thread threadClass = new Thread(ServerThread);
+            threadClass.Start();
         }
 
         private void Server_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private  void ServerThread()
+        {
+            while (true)
+            {
+                Socket socket = listener.AcceptSocket();
+                if (socket.Connected)
+                {
+                    richTextBox.BeginInvoke((MethodInvoker)(() => richTextBox.AppendText("Client is connected...\n")));
+                    NetworkStream networkStream = new NetworkStream(socket);
+                    ASCIIEncoding encoding = new ASCIIEncoding();
+
+                    ThreadClass threadClass = new ThreadClass();
+                    Thread thread = threadClass.Start(networkStream, this);
+                }
+            }
         }
     }
 }

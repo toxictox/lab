@@ -12,36 +12,44 @@ namespace Lab_3_server
 {
     class FileManager
     {
-        String fileName = "D:\\Учебное\\RIS\\Lab_3_server\\Lab_3_server\\text.txt";
+        String fileName = @"c:\Work\Students\src\lab\Lab_3_server\Lab_3_server\text.txt ";
         FileStream fileStream;
         StreamReader streamReader;
         StreamWriter streamWriter;
 
+        private static object syncObj = new object();
+
         public string ReadAllFromFile()
         {
-            string result;
-            fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-            streamReader = new StreamReader(fileStream);
+            lock (syncObj)
+            {
+                string result;
+                fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                streamReader = new StreamReader(fileStream);
 
-            result = streamReader.ReadToEnd();
+                result = streamReader.ReadToEnd();
 
-            streamReader.Close();
-            fileStream.Close();
+                streamReader.Close();
+                fileStream.Close();
 
-            return result;
+                return result;
+            }
         }
 
         public void AddToFile(string row)
         {
-            string[] info = row.Split(' ');
-            fileStream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
-            fileStream.Seek(0, SeekOrigin.End);
-            streamWriter = new StreamWriter(fileStream);
+            lock (syncObj)
+            {
+                string[] info = row.Split(' ');
+                fileStream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
+                fileStream.Seek(0, SeekOrigin.End);
+                streamWriter = new StreamWriter(fileStream);
 
-            streamWriter.WriteLine(info[1] + " " + info[2] + " " + info[3] + " " + info[4]);
+                streamWriter.WriteLine(info[1] + " " + info[2] + " " + info[3] + " " + info[4]);
 
-            streamWriter.Close();
-            fileStream.Close();
+                streamWriter.Close();
+                fileStream.Close();
+            }
         }
 
         public List<IceCreamPurchase> ReadFromFile()
@@ -50,37 +58,42 @@ namespace Lab_3_server
             string line;
             string[] iceCreamPurchaseInfo;
 
-            fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-            fileStream.Seek(0, SeekOrigin.Begin);
-            streamReader = new StreamReader(fileStream);
-
-            while ((line = streamReader.ReadLine()) != null)
+            lock (syncObj)
             {
-                iceCreamPurchaseInfo = line.Split(' ');
-                if (iceCreamPurchaseInfo.Length == 4)
-                    iceCreamPurchaseList.Add(new IceCreamPurchase(System.Int32.Parse(iceCreamPurchaseInfo[0]), iceCreamPurchaseInfo[1], System.Int32.Parse(iceCreamPurchaseInfo[2]), System.Int32.Parse(iceCreamPurchaseInfo[3])));
+                fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+                fileStream.Seek(0, SeekOrigin.Begin);
+                streamReader = new StreamReader(fileStream);
+
+                while ((line = streamReader.ReadLine()) != null)
+                {
+                    iceCreamPurchaseInfo = line.Split(' ');
+                    if (iceCreamPurchaseInfo.Length == 4)
+                        iceCreamPurchaseList.Add(new IceCreamPurchase(System.Int32.Parse(iceCreamPurchaseInfo[0]), iceCreamPurchaseInfo[1], System.Int32.Parse(iceCreamPurchaseInfo[2]), System.Int32.Parse(iceCreamPurchaseInfo[3])));
+                }
+
+                streamReader.Close();
+                fileStream.Close();
             }
-
-            streamReader.Close();
-            fileStream.Close();
-
             return iceCreamPurchaseList;
         }
 
         public void RewriteFile(List<IceCreamPurchase> iceCreamPurchaseList)
         {
-            File.Delete(fileName);
-
-            fileStream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
-            streamWriter = new StreamWriter(fileStream);
-
-            foreach (IceCreamPurchase s in iceCreamPurchaseList)
+            lock (syncObj)
             {
-                streamWriter.WriteLine(s.Id + " " + s.Name + " " + s.Quantity + " " + s.Price);
-            }
+                File.Delete(fileName);
 
-            streamWriter.Close();
-            fileStream.Close();
+                fileStream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
+                streamWriter = new StreamWriter(fileStream);
+
+                foreach (IceCreamPurchase s in iceCreamPurchaseList)
+                {
+                    streamWriter.WriteLine(s.Id + " " + s.Name + " " + s.Quantity + " " + s.Price);
+                }
+
+                streamWriter.Close();
+                fileStream.Close();
+            }
         }
 
         public List<IceCreamPurchase> Sort(List<IceCreamPurchase> iceCreamPurchaseList, string type, string order)
