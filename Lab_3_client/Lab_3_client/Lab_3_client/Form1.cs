@@ -59,7 +59,7 @@ namespace Lab_3_client
             purchaseName.Enabled = true;
             quantity.Enabled = true;
             price.Enabled = true;
-            purchaseId.Enabled = false;
+            purchaseId.Enabled = true;
         }
 
         private void radioDelete_CheckedChanged(object sender, EventArgs e)
@@ -151,11 +151,11 @@ namespace Lab_3_client
                     break;
                 case 2:
                     logListBox.Items.Add("Edit purchase");
-                    command += formManager.FormChangeMessage(purchaseId.Text, purchaseName.Text, quantity.Text, price.Text, oldPurchaseName.Text);
+                    command += formManager.FormChangeMessage(purchaseId.Text, purchaseName.Text, quantity.Text, price.Text);
                     break;
                 case 3:
                     logListBox.Items.Add("Delete purchase");
-                    command += formManager.FormDeleteMessage(purchaseName.Text);
+                    command += formManager.FormDeleteMessage(purchaseId.Text);
                     break;
                 case 4:
                     logListBox.Items.Add("Sort list of purchases");

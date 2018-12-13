@@ -60,7 +60,7 @@ namespace Lab_3_server
 
                 int action = Int32.Parse(command.Substring(0, 1));
                 byte[] sent = new byte[buffLen];
-
+                IceCreamPurchase purchase = null;
                 switch (action)
                 {
                     case 0:
@@ -87,29 +87,23 @@ namespace Lab_3_server
 
                         iceCreamPurchaseList = fileManager.ReadFromFile();
 
-                        foreach (IceCreamPurchase s in iceCreamPurchaseList)
+                        purchase = iceCreamPurchaseList.Find(x => x.Id == Int32.Parse(row[1]));
+                        if (purchase != null)
                         {
-                            if (s.Id.Equals(row[1]))
-                            {
-                                if (!row[2].Equals(""))
-                                {
-                                    s.Name = row[2];
-                                }
+                            purchase.Name = row[3];
+                            purchase.Quantity = Int32.Parse(row[4]);
+                            purchase.Price = Int32.Parse(row[5]);
 
-                                try
-                                {
-                                    s.Quantity = Int32.Parse(row[3]);
-                                    s.Price = Int32.Parse(row[4]);
-                                }
-                                catch
-                                { }
-                            }
+                            fileManager.RewriteFile(iceCreamPurchaseList);
+                            textBox.BeginInvoke((MethodInvoker)(() => textBox.AppendText("File is modified\n")));
+                            sent = encoding.GetBytes("Change successfully");
+                        }
+                        else
+                        {
+                            textBox.BeginInvoke((MethodInvoker)(() => textBox.AppendText("purchase id = " + row[1] + " not found\n")));
+                            sent = encoding.GetBytes("Change not successfully");
                         }
 
-                        fileManager.RewriteFile(iceCreamPurchaseList);
-
-                        textBox.BeginInvoke((MethodInvoker)(() => textBox.AppendText("File is modified\n")));
-                        sent = encoding.GetBytes("Change successfully");
                         networkStream.Write(sent, 0, sent.Length);
 
                         break;
@@ -120,19 +114,21 @@ namespace Lab_3_server
 
                         iceCreamPurchaseList = fileManager.ReadFromFile();
 
-                        for (int i = 0; i < iceCreamPurchaseList.Count; i++)
+                        purchase = iceCreamPurchaseList.Find(x => x.Id == Int32.Parse(row[1]));
+                        if (purchase != null)
                         {
-                            if (iceCreamPurchaseList.ElementAt(i).Id.CompareTo(Int32.Parse(row[1])) == 0)
-                            {
-                                iceCreamPurchaseList.Remove(iceCreamPurchaseList.ElementAt(i));
-                            }
+                            iceCreamPurchaseList.Remove(purchase);
+                            fileManager.RewriteFile(iceCreamPurchaseList);
+                            textBox.BeginInvoke((MethodInvoker)(() => textBox.AppendText("Info is deleted\n")));
+                            sent = encoding.GetBytes("Delete uccessfully");
+                        }
+                        else
+                        {
+                            textBox.BeginInvoke((MethodInvoker)(() => textBox.AppendText("purchase id = " + row[1] + " not found\n")));
+                            sent = encoding.GetBytes("Delete not successfully");
                         }
 
-                        fileManager.RewriteFile(iceCreamPurchaseList);
 
-                        textBox.BeginInvoke((MethodInvoker)(() => textBox.AppendText("Info is deleted\n")));
-
-                        sent = encoding.GetBytes("Delete uccessfully");
                         networkStream.Write(sent, 0, sent.Length);
 
                         break;

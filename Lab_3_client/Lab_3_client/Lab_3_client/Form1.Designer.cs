@@ -46,31 +46,33 @@
             this.radioId = new System.Windows.Forms.RadioButton();
             this.logListBox = new System.Windows.Forms.ListBox();
             this.purchaseGroupBox = new System.Windows.Forms.GroupBox();
+            this.purchaseId = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.price = new System.Windows.Forms.TextBox();
             this.quantity = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.purchaseId = new System.Windows.Forms.TextBox();
             this.sortGroupBox.SuspendLayout();
             this.purchaseGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // purchaseName
             // 
-            this.purchaseName.Location = new System.Drawing.Point(178, 73);
+            this.purchaseName.Location = new System.Drawing.Point(237, 91);
+            this.purchaseName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.purchaseName.Name = "purchaseName";
-            this.purchaseName.Size = new System.Drawing.Size(161, 26);
+            this.purchaseName.Size = new System.Drawing.Size(213, 31);
             this.purchaseName.TabIndex = 0;
             // 
             // radioView
             // 
             this.radioView.AutoSize = true;
-            this.radioView.Location = new System.Drawing.Point(335, 24);
+            this.radioView.Location = new System.Drawing.Point(447, 30);
+            this.radioView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioView.Name = "radioView";
-            this.radioView.Size = new System.Drawing.Size(151, 24);
+            this.radioView.Size = new System.Drawing.Size(200, 29);
             this.radioView.TabIndex = 2;
             this.radioView.TabStop = true;
             this.radioView.Text = "Read purchases";
@@ -80,9 +82,10 @@
             // radioAdd
             // 
             this.radioAdd.AutoSize = true;
-            this.radioAdd.Location = new System.Drawing.Point(335, 60);
+            this.radioAdd.Location = new System.Drawing.Point(447, 75);
+            this.radioAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioAdd.Name = "radioAdd";
-            this.radioAdd.Size = new System.Drawing.Size(133, 24);
+            this.radioAdd.Size = new System.Drawing.Size(176, 29);
             this.radioAdd.TabIndex = 3;
             this.radioAdd.TabStop = true;
             this.radioAdd.Text = "Add purchase";
@@ -91,18 +94,20 @@
             // 
             // icecreamRichTextBox
             // 
-            this.icecreamRichTextBox.Location = new System.Drawing.Point(13, 13);
+            this.icecreamRichTextBox.Location = new System.Drawing.Point(17, 16);
+            this.icecreamRichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.icecreamRichTextBox.Name = "icecreamRichTextBox";
-            this.icecreamRichTextBox.Size = new System.Drawing.Size(316, 262);
+            this.icecreamRichTextBox.Size = new System.Drawing.Size(420, 326);
             this.icecreamRichTextBox.TabIndex = 4;
             this.icecreamRichTextBox.Text = "";
             // 
             // radioChange
             // 
             this.radioChange.AutoSize = true;
-            this.radioChange.Location = new System.Drawing.Point(335, 96);
+            this.radioChange.Location = new System.Drawing.Point(447, 120);
+            this.radioChange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioChange.Name = "radioChange";
-            this.radioChange.Size = new System.Drawing.Size(132, 24);
+            this.radioChange.Size = new System.Drawing.Size(175, 29);
             this.radioChange.TabIndex = 5;
             this.radioChange.TabStop = true;
             this.radioChange.Text = "Edit purchase";
@@ -111,17 +116,20 @@
             // 
             // oldPurchaseName
             // 
-            this.oldPurchaseName.Location = new System.Drawing.Point(178, 113);
+            this.oldPurchaseName.Location = new System.Drawing.Point(237, 141);
+            this.oldPurchaseName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.oldPurchaseName.Name = "oldPurchaseName";
-            this.oldPurchaseName.Size = new System.Drawing.Size(161, 26);
+            this.oldPurchaseName.Size = new System.Drawing.Size(213, 31);
             this.oldPurchaseName.TabIndex = 6;
+            this.oldPurchaseName.Visible = false;
             // 
             // radioDelete
             // 
             this.radioDelete.AutoSize = true;
-            this.radioDelete.Location = new System.Drawing.Point(335, 132);
+            this.radioDelete.Location = new System.Drawing.Point(447, 165);
+            this.radioDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioDelete.Name = "radioDelete";
-            this.radioDelete.Size = new System.Drawing.Size(151, 24);
+            this.radioDelete.Size = new System.Drawing.Size(200, 29);
             this.radioDelete.TabIndex = 7;
             this.radioDelete.TabStop = true;
             this.radioDelete.Text = "Delete purchase";
@@ -131,9 +139,10 @@
             // radioSort
             // 
             this.radioSort.AutoSize = true;
-            this.radioSort.Location = new System.Drawing.Point(335, 168);
+            this.radioSort.Location = new System.Drawing.Point(447, 210);
+            this.radioSort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioSort.Name = "radioSort";
-            this.radioSort.Size = new System.Drawing.Size(183, 24);
+            this.radioSort.Size = new System.Drawing.Size(245, 29);
             this.radioSort.TabIndex = 8;
             this.radioSort.TabStop = true;
             this.radioSort.Text = "Sort list of purchases";
@@ -143,9 +152,10 @@
             // radioFind
             // 
             this.radioFind.AutoSize = true;
-            this.radioFind.Location = new System.Drawing.Point(335, 204);
+            this.radioFind.Location = new System.Drawing.Point(447, 255);
+            this.radioFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioFind.Name = "radioFind";
-            this.radioFind.Size = new System.Drawing.Size(85, 24);
+            this.radioFind.Size = new System.Drawing.Size(111, 29);
             this.radioFind.TabIndex = 9;
             this.radioFind.TabStop = true;
             this.radioFind.Text = "Search";
@@ -154,9 +164,10 @@
             // 
             // executeButton
             // 
-            this.executeButton.Location = new System.Drawing.Point(335, 236);
+            this.executeButton.Location = new System.Drawing.Point(447, 295);
+            this.executeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.executeButton.Name = "executeButton";
-            this.executeButton.Size = new System.Drawing.Size(109, 39);
+            this.executeButton.Size = new System.Drawing.Size(145, 49);
             this.executeButton.TabIndex = 10;
             this.executeButton.Text = "Execute";
             this.executeButton.UseVisualStyleBackColor = true;
@@ -169,9 +180,11 @@
             this.sortGroupBox.Controls.Add(this.radioQuantity);
             this.sortGroupBox.Controls.Add(this.radioName);
             this.sortGroupBox.Controls.Add(this.radioId);
-            this.sortGroupBox.Location = new System.Drawing.Point(13, 281);
+            this.sortGroupBox.Location = new System.Drawing.Point(17, 351);
+            this.sortGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sortGroupBox.Name = "sortGroupBox";
-            this.sortGroupBox.Size = new System.Drawing.Size(316, 157);
+            this.sortGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sortGroupBox.Size = new System.Drawing.Size(421, 196);
             this.sortGroupBox.TabIndex = 11;
             this.sortGroupBox.TabStop = false;
             this.sortGroupBox.Text = "Sort settings";
@@ -179,9 +192,10 @@
             // sortOrder
             // 
             this.sortOrder.AutoSize = true;
-            this.sortOrder.Location = new System.Drawing.Point(193, 26);
+            this.sortOrder.Location = new System.Drawing.Point(257, 32);
+            this.sortOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sortOrder.Name = "sortOrder";
-            this.sortOrder.Size = new System.Drawing.Size(80, 24);
+            this.sortOrder.Size = new System.Drawing.Size(102, 29);
             this.sortOrder.TabIndex = 16;
             this.sortOrder.Text = "DESC";
             this.sortOrder.UseVisualStyleBackColor = true;
@@ -189,9 +203,10 @@
             // radioPrice
             // 
             this.radioPrice.AutoSize = true;
-            this.radioPrice.Location = new System.Drawing.Point(6, 116);
+            this.radioPrice.Location = new System.Drawing.Point(8, 145);
+            this.radioPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioPrice.Name = "radioPrice";
-            this.radioPrice.Size = new System.Drawing.Size(88, 24);
+            this.radioPrice.Size = new System.Drawing.Size(119, 29);
             this.radioPrice.TabIndex = 15;
             this.radioPrice.TabStop = true;
             this.radioPrice.Text = "by price";
@@ -201,9 +216,10 @@
             // radioQuantity
             // 
             this.radioQuantity.AutoSize = true;
-            this.radioQuantity.Location = new System.Drawing.Point(6, 87);
+            this.radioQuantity.Location = new System.Drawing.Point(8, 109);
+            this.radioQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioQuantity.Name = "radioQuantity";
-            this.radioQuantity.Size = new System.Drawing.Size(110, 24);
+            this.radioQuantity.Size = new System.Drawing.Size(148, 29);
             this.radioQuantity.TabIndex = 14;
             this.radioQuantity.TabStop = true;
             this.radioQuantity.Text = "by quantity";
@@ -213,9 +229,10 @@
             // radioName
             // 
             this.radioName.AutoSize = true;
-            this.radioName.Location = new System.Drawing.Point(6, 56);
+            this.radioName.Location = new System.Drawing.Point(8, 70);
+            this.radioName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioName.Name = "radioName";
-            this.radioName.Size = new System.Drawing.Size(167, 24);
+            this.radioName.Size = new System.Drawing.Size(225, 29);
             this.radioName.TabIndex = 13;
             this.radioName.TabStop = true;
             this.radioName.Text = "by ice-cream name";
@@ -225,9 +242,10 @@
             // radioId
             // 
             this.radioId.AutoSize = true;
-            this.radioId.Location = new System.Drawing.Point(6, 25);
+            this.radioId.Location = new System.Drawing.Point(8, 31);
+            this.radioId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioId.Name = "radioId";
-            this.radioId.Size = new System.Drawing.Size(66, 24);
+            this.radioId.Size = new System.Drawing.Size(89, 29);
             this.radioId.TabIndex = 12;
             this.radioId.TabStop = true;
             this.radioId.Text = "by id";
@@ -237,10 +255,11 @@
             // logListBox
             // 
             this.logListBox.FormattingEnabled = true;
-            this.logListBox.ItemHeight = 20;
-            this.logListBox.Location = new System.Drawing.Point(536, 254);
+            this.logListBox.ItemHeight = 25;
+            this.logListBox.Location = new System.Drawing.Point(715, 318);
+            this.logListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.logListBox.Name = "logListBox";
-            this.logListBox.Size = new System.Drawing.Size(362, 184);
+            this.logListBox.Size = new System.Drawing.Size(481, 229);
             this.logListBox.TabIndex = 12;
             // 
             // purchaseGroupBox
@@ -255,84 +274,95 @@
             this.purchaseGroupBox.Controls.Add(this.quantity);
             this.purchaseGroupBox.Controls.Add(this.purchaseName);
             this.purchaseGroupBox.Controls.Add(this.oldPurchaseName);
-            this.purchaseGroupBox.Location = new System.Drawing.Point(536, 13);
+            this.purchaseGroupBox.Location = new System.Drawing.Point(715, 16);
+            this.purchaseGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.purchaseGroupBox.Name = "purchaseGroupBox";
-            this.purchaseGroupBox.Size = new System.Drawing.Size(362, 235);
+            this.purchaseGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.purchaseGroupBox.Size = new System.Drawing.Size(483, 294);
             this.purchaseGroupBox.TabIndex = 13;
             this.purchaseGroupBox.TabStop = false;
             this.purchaseGroupBox.Text = "Purchase info";
             // 
+            // purchaseId
+            // 
+            this.purchaseId.Location = new System.Drawing.Point(237, 46);
+            this.purchaseId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.purchaseId.Name = "purchaseId";
+            this.purchaseId.Size = new System.Drawing.Size(213, 31);
+            this.purchaseId.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(73, 46);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(132, 25);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Purchase  Id";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 197);
+            this.label4.Location = new System.Drawing.Point(41, 246);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 20);
+            this.label4.Size = new System.Drawing.Size(165, 25);
             this.label4.TabIndex = 12;
             this.label4.Text = "Ice-cream price:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(81, 157);
+            this.label3.Location = new System.Drawing.Point(108, 196);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 20);
+            this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 11;
             this.label3.Text = "Quantity:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 117);
+            this.label2.Location = new System.Drawing.Point(48, 146);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 20);
+            this.label2.Size = new System.Drawing.Size(161, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "Previous name:";
+            this.label2.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 77);
+            this.label1.Location = new System.Drawing.Point(33, 96);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
+            this.label1.Size = new System.Drawing.Size(171, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "Ice-cream name:";
             // 
             // price
             // 
-            this.price.Location = new System.Drawing.Point(178, 193);
+            this.price.Location = new System.Drawing.Point(237, 241);
+            this.price.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(161, 26);
+            this.price.Size = new System.Drawing.Size(213, 31);
             this.price.TabIndex = 8;
             // 
             // quantity
             // 
-            this.quantity.Location = new System.Drawing.Point(178, 153);
+            this.quantity.Location = new System.Drawing.Point(237, 191);
+            this.quantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(161, 26);
+            this.quantity.Size = new System.Drawing.Size(213, 31);
             this.quantity.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(55, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 20);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Purchase  Id";
-            // 
-            // purchaseId
-            // 
-            this.purchaseId.Location = new System.Drawing.Point(178, 37);
-            this.purchaseId.Name = "purchaseId";
-            this.purchaseId.Size = new System.Drawing.Size(161, 26);
-            this.purchaseId.TabIndex = 14;
             // 
             // Client
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 450);
+            this.ClientSize = new System.Drawing.Size(1213, 562);
             this.Controls.Add(this.purchaseGroupBox);
             this.Controls.Add(this.logListBox);
             this.Controls.Add(this.sortGroupBox);
@@ -344,6 +374,7 @@
             this.Controls.Add(this.icecreamRichTextBox);
             this.Controls.Add(this.radioAdd);
             this.Controls.Add(this.radioView);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Client";
             this.Text = "LW_3_client__ice-cream_purchases";
             this.sortGroupBox.ResumeLayout(false);

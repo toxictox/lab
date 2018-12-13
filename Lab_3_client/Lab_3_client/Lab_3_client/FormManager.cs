@@ -40,7 +40,7 @@ namespace Lab_3_client
             return message;
         }
 
-        public String FormChangeMessage(string purchaseId, string purchaseName, string quantity, string price, string previousName)
+        public String FormChangeMessage(string purchaseId, string purchaseName, string quantity, string price, string previousName = "x")
         {
             String message = "";
             error = "";
