@@ -136,7 +136,8 @@ namespace Lab_3_client
             NetworkStream networkStream = tcpClient.GetStream();
             String command = operation.ToString();
             byte[] sent = null;
-            byte[] received = new byte[256];
+            int buffLen = 256;
+            byte[] received = new byte[buffLen];
 
             switch (operation)
             {
@@ -171,8 +172,17 @@ namespace Lab_3_client
             {
                 sent = encoding.GetBytes(command);
                 networkStream.Write(sent, 0, sent.Length);
-                networkStream.Read(received, 0, received.Length);
-                icecreamRichTextBox.Text = encoding.GetString(received);
+
+                StringBuilder sb = new StringBuilder();
+                int incomingData;
+                do
+                {
+                    incomingData = networkStream.Read(received, 0, received.Length);
+                    sb.Append(encoding.GetString(received, 0, incomingData));
+                }
+                while (incomingData == buffLen);
+
+                icecreamRichTextBox.Text = sb.ToString();
             }
             else
             {
