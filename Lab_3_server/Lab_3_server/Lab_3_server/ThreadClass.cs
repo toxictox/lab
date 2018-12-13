@@ -65,7 +65,10 @@ namespace Lab_3_server
                 {
                     case 0:
                         textBox.BeginInvoke((MethodInvoker)(() => textBox.AppendText("Request to read info\n")));
-                        sent = encoding.GetBytes(fileManager.ReadAllFromFile());
+                        var dataToSend = fileManager.ReadAllFromFile();
+                        if (dataToSend.Length == 0)
+                            dataToSend = " ";
+                        sent = encoding.GetBytes(dataToSend);
                         networkStream.Write(sent, 0, sent.Length);
                         textBox.BeginInvoke((MethodInvoker)(() => textBox.AppendText("Info is read and sent\n")));
                         break;
