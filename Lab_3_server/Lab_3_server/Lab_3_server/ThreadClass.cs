@@ -45,11 +45,21 @@ namespace Lab_3_server
 
             while (true)
             {
-                byte[] received = new byte[256];
-                networkStream.Read(received, 0, received.Length);
-                String command = encoding.GetString(received);
+                int buffLen = 256;
+                byte[] received = new byte[buffLen];
+                StringBuilder sb = new StringBuilder();
+                int incomingData;
+                do
+                {
+                    incomingData = networkStream.Read(received, 0, received.Length);
+                    sb.Append(encoding.GetString(received, 0, incomingData));
+                }
+                while (incomingData == buffLen);
+
+                String command = sb.ToString();
+
                 int action = Int32.Parse(command.Substring(0, 1));
-                byte[] sent = new byte[256];
+                byte[] sent = new byte[buffLen];
 
                 switch (action)
                 {
